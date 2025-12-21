@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour mon lapin étoilé ✨</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: linear-gradient(135deg, #ff9ec0 0%, #ffd166 100%);
+            color: #5a4a6a;
+            line-height: 1.8;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 25px 60px rgba(255, 158, 192, 0.4);
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ff6b9d, #ff9a3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
+        }
+        
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: #ff6b9d;
+            text-shadow: 0 2px 8px rgba(255, 107, 157, 0.2);
+        }
+        
+        .section {
+            margin: 50px 0;
+        }
+        
+        .section-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b9d;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff6b9d, #ff9a3c, transparent);
+        }
+        
+        .message-box {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 234, 0.8));
+            padding: 40px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 158, 192, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 158, 192, 0.4);
+        }
+        
+        .message-box p {
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            color: #6a5a7a;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #ff6b9d, #ff9a3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .congrats-box {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 240, 0.9));
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 60px 0;
+            border: 3px solid rgba(255, 107, 157, 0.7);
+            box-shadow: 0 15px 45px rgba(255, 107, 157, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .congrats-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.5);
+        }
+        
+        .congrats-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .congrats-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff6b9d, #ff9a3c, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .congrats-content {
+            font-size: 1.2em;
+            color: #6a5a7a;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .trophy {
+            font-size: 3em;
+            display: block;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+            text-shadow: 0 5px 15px rgba(255, 154, 60, 0.4);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(10deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(-10deg); }
+        }
+        
+        .video-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .video-container {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: scale(1.02);
+        }
+        
+        .video-note {
+            font-style: italic;
+            color: #8a7a9a;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #ff6b9d, #ff9a3c, transparent);
+        }
+        
+        .timeline-item {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 240, 0.9));
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b9d;
+            position: relative;
+            width: 45%;
+            box-shadow: 0 8px 25px rgba(255, 158, 192, 0.3);
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: 0 15px 35px rgba(255, 158, 192, 0.4);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+            border-left: 5px solid #ff9a3c;
+        }
+        
+        .timeline-date {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b9d;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            font-size: 1.1em;
+            color: #6a5a7a;
+        }
+        
+        .timeline-emoji {
+            font-size: 2em;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        .stars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .star-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 234, 0.8));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            box-shadow: 0 8px 20px rgba(255, 158, 192, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .star-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 158, 192, 0.4);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 240, 0.9));
+        }
+        
+        .quote {
+            font-family: 'Dancing Script', cursive;
+            font-style: italic;
+            font-size: 1.5em;
+            color: #6a5a7a;
+            padding: 35px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 234, 0.8));
+            border-left: 8px solid #ff6b9d;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(255, 158, 192, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .quote:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 158, 192, 0.4);
+        }
+        
+        .quote-author {
+            display: block;
+            text-align: right;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+        
+        .special-note {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 234, 0.8));
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid rgba(255, 107, 157, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 158, 192, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .special-note:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 158, 192, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 3px solid rgba(255, 107, 157, 0.4);
+            position: relative;
+        }
+        
+        .final-message {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            background: linear-gradient(45deg, #ff6b9d, #ff9a3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .heart {
+            color: #ff6b9d;
+            font-size: 2em;
+            animation: heartbeat 1.2s infinite;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(255, 107, 157, 0.5);
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1.1); }
+            75% { transform: scale(1.2); }
+        }
+        
+        .floating-star {
+            position: absolute;
+            font-size: 1.5em;
+            opacity: 0.7;
+            z-index: -1;
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+        }
+        
+        .star-pink {
+            color: #ff6b9d;
+        }
+        
+        .star-orange {
+            color: #ff9a3c;
+        }
+        
+        .star-peach {
+            color: #ffb8c6;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(90deg); opacity: 0.9; }
+            50% { transform: translate(-25px, 20px) rotate(180deg); opacity: 0.5; }
+            75% { transform: translate(35px, 15px) rotate(270deg); opacity: 0.8; }
+        }
+        
+        .animate-step {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .animate-step.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 25px; }
+            .title { font-size: 2.5em; }
+            .timeline::before { left: 30px; }
+            .timeline-item { 
+                width: calc(100% - 60px); 
+                margin-left: 60px !important; 
+            }
+            .stars-grid { grid-template-columns: 1fr; }
+            .quote { font-size: 1.2em; padding: 25px; }
+            .congrats-title { font-size: 2em; }
+            .video-container iframe { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="floating-stars"></div>
+    
+    <div class="container">
+        <header class="header animate-step">
+            <h1 class="title">Helloooo mon lapin étoilé !</h1>
+            <p class="subtitle">Un voyage dans nos souvenirs de 2025 ✨</p>
+        </header>
+        
+        <section class="section">
+            <div class="message-box animate-step">
+                <p>Cette page a été créée <span class="highlight">spécialement pour toi, Clem</span>.</p>
+                <p>Je voulais te dire merci... Merci pour ta lumière, pour ces lives qui réchauffent l'âme, pour ton rire contagieux et pour tous ces instants magiques que 2025 nous a offerts. Chaque moment partagé est devenu une étoile dans notre ciel commun.</p>
+                <p>Alors, viens, parcourons ensemble cette galerie de souvenirs précieux :</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title animate-step">✨ Chronologie 2025 ✨</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🎮</span> Début d'année</div>
+                    <div class="timeline-content">L'aventure a très bien commencé avec les lives <strong>Roblox</strong> ! Ça a commencé comme une étincelle et est devenu une belle flamme ! Des montagnes gravies ensemble, des rires partagés, des défis relevés main dans la main.</div>
+                </div>
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🍩❤️</span> Février</div>
+                    <div class="timeline-content"><strong>La Saint-Valentin gourmande</strong> avec les trois donuts devenus légendaires.</div>
+                </div>
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🏰🧚🏻‍♀️🌟</span> Juin</div>
+                    <div class="timeline-content"><strong>Un mois de SURPRISE !</strong> Le château OMG ! Mais aussi le don dessiné, par notre incroyable et talentueuse Icou. Puis ton badge Ace, tu as été la <strong>première de France</strong> ! Une fierté qui nous illumine tous.</div>
+                </div>
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🧙‍♀️👼</span> Octobre</div>
+                    <div class="timeline-content"><strong>Halloween Live Ranking</strong> Tu es redevenue la sorcière aux chaudrons et on a aussi six nuits magiques ! Puis l'événement ange qui a prouvé que d'avant d'être une sorcière tu es toujours un ange.</div>
+                </div>
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🍓</span> Novembre</div>
+                    <div class="timeline-content"><strong>Le Sweet Match,</strong> avec Kendra qui t'a supportée un max, et tous les autres moments de victoires, vous 2 ensemble. Suivi des missions qui ont été des challenges assez intéressants je trouve, où toi et la commu avez fait un travail d'équipe.</div>
+                </div>
+                <div class="timeline-item animate-step">
+                    <div class="timeline-date"><span class="timeline-emoji">🎄🛷</span> Décembre</div>
+                    <div class="timeline-content"><strong>Le cadeau de Noël magique</strong> avec la luge féerique, un don éphémère mais dont le souvenir restera dans nos mémoires.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title animate-step">⭐ Donnateurs 2025 ⭐</h2>
+            <div class="message-box animate-step">
+                <p>Cette année n'aurait pas été la même sans ces étoiles brillantes qui ont illuminé notre chemin.</p>
+                <p>Chacune a apporté sa force magique :</p>
+            </div>
+            <div class="stars-grid">
+                <div class="star-card animate-step">Kendra<br><em>(@princess_k3ndra)</em></div>
+                <div class="star-card animate-step">Steevy<br><em>(@steevyfr)</em></div>
+                <div class="star-card animate-step">Blouh<br><em>(@bluewenn)</em></div>
+                <div class="star-card animate-step">Jojo Zems<br><em>(@jojo_zem-officiel)</em></div>
+                <div class="star-card animate-step">Azwel<br><em>(@azwel)</em></div>
+                <div class="star-card animate-step">Madame<br><em>(@madame_offiel0)</em></div>
+                <div class="star-card animate-step">Monsieur<br><em>(@gogo267)</em></div>
+                <div class="star-card animate-step">Mox<br><em>(@moxhi.zpt)</em></div>
+                <div class="star-card animate-step">Violet<br><em>(@bch4fj)</em></div>
+                <div class="star-card animate-step">Manon VSP<br><em>(@manon_lbplll)</em></div>
+            </div>
+            <div class="special-note animate-step">
+                <p style="font-size: 1.3em; color: #ff6b9d;">✨ Merci à tous les donateurs mais aussi à toutes les autres personnes qui te soutiennent autrement que par des dons ✨</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title animate-step">🎉 Et pour finir... les ZELA 2025 🎉</h2>
+            <div class="congrats-box animate-step">
+                <div class="congrats-title">🔥 FÉLICITATIONS CLEM !!! 🔥</div>
+                <div class="congrats-content">
+                    <span class="trophy">🏆🏆</span>
+                    <p><strong>GG LES ZELA !!! DOUBLE TROPHÉE D'UN COUP, DANS LA REGIONALE ET DANS GAMING, C'EST ÉNORME !!!</strong></p>
+                    <p>Toutes ces heures de live, ces moments où on a tout donné et pas abandonné, où on a tryhard ensemble... Tout ça a mené à <strong>ÇA</strong> ! Cette victoire, tu l'as méritée à 200%.</p>
+                    <p>Je suis tellement, tellement fière de toi, c'est juste magnifique. Fêtons ça ensemble ma championne ! 🎉</p>
+                    <p>Bravo à toi ! Et bravo à Bob notre super star de nous avoir accompagnés toute l'année.</p>
+                </div>
+            
+            <!-- VIDEO TIKTOK INSÉRÉE ICI -->
+            <div class="video-section animate-step">
+                <h3 class="section-title" style="font-size: 1.8em; margin-top: 40px;">🎥 On revoit cette victoire en vidéo !</h3>
+                <div class="video-container">
+                    <!-- Le lien TikTok que vous avez fourni -->
+                   </div>
+                <p class="video-note">✨ Une vidéo pour immortaliser ce double trophée ! ✨</p>
+                <p style="color: #ff6b9d; margin-top: 10px;"><em>Lien direct : <a href="https://vm.tiktok.com/ZNR2j8u5o/" target="_blank">https://vm.tiktok.com/ZNR2j8u5o/</a></em></p>
+            </div>
+
+        </section>
+
+        <section class="section">
+            <h2 class="section-title animate-step">💌 Messages du Cœur 💌</h2>
+            <div class="quote animate-step">"Je dirais que grâce à Clem j'ai appris à vite grandir en maturité mais je ne sais pas comment, malgré quelques neurones en moins je me dis d'avoir la chance de voir ces lives dès que je rentre du collège ou après une journée pourrie, donc merci Clem d'être le soleil de ma vie de me redonner le sourire quand je suis dans des périodes compliquées mentalement ou familialement, tu es l'étoile de mon cœur."<span class="quote-author">– ⭐☆La ponette☆🧚</span></div>
+            <div class="quote animate-step">"HELLO MA CLEMOU j’espère que tu vas hyper bien, je voulais te remercier pour cette incroyable année 2025 c’est étonnant de se dire bientôt 2026 ! J’ai tellement de souvenirs que ça soit Noël, Halloween, la Saint Valentin... bref tu as toujours su nous remonter le moral. ♡JE T’AIME CLEM TU ES MON ETOILE☆La lumière des étoiles nous guidera ☆."<span class="quote-author">– ☆Sousou☆</span></div>
+            <div class="quote animate-step">"J'ai tellement de chance d'être dans la famille des étoiles je n'aurais jamais pu espérer mieux et pour rien au monde je ne partirai. La première fois que j'ai regardé un de tes live c'était un live Fortnite, j'étais tombé sur toi par hasard et tu m'as fait tellement rire que je suis revenu le lendemain et le jour d'après et les jours d'encore après et depuis je viens tous les jours. Tes lives sont incroyables et énormément réconfortants. Sans toi je pense que plus de la moitié de la famille des étoiles ne serait pas aussi heureuse donc je te souhaite tout le bonheur du monde. J'espère que tu en feras encore des lives incroyables comme ça et que du love bisous clem clem🥰."<span class="quote-author">– ꧁☆🌺maissane🌺☆꧂</span></div>
+            <div class="quote animate-step">"Dès le début, j’ai été fascinée par ses lives. Ensuite j’ai appris à la connaître. Petit à petit je découvrais sa personnalité, son humour, et à chaque live, je m’attachais à elle encore un peu plus. Je suis rentrée dans son club après un peu plus d’un mois. J’étais tellement contente ! Pour moi je venais de devenir officiellement un membre de la famille des étoiles. Bref, je ne sais pas ce que je ferais sans elle. Je t’aime de tout mon coeur Clem, ne l’oublie pas 💗⭐️."<span class="quote-author">– °•☆ Kim ☆•°</span></div>
+            <div class="quote animate-step">"Merci pour cette année incroyable ✨️ tu m'as fait rire, sourire, pleurer (quand y'avait des bugs) et tu m'as fait rencontrer des personnes incroyables 💗 tu as eu beaucoup de diarrhée et t'as beaucoup crié sur Kendra 💩👸 Repose-toi bien pendant tes vacances 🩷 tu as rendu cette année magique 🧙‍♀️ et prends une douche avant le nouvel an pour pas nous intoxiquer au début 2026 🦧 t'es une winx, une sorcière et un singe 🌷 je t'aime de tout mon cœur vieille mamie 🌟💗💗"<span class="quote-author">– zoe☆</span></div>
+            <div class="quote animate-step">"Clem je t'aime énormément, tu es une personne incroyable, merci beaucoup de m'avoir attrapé comme un Pokémon. Tu es l'étoile qui fait briller mon cœur toutes mes journées. Je t'aime mon chou à la crème 💗🫂"<span class="quote-author">– ☆°~𝐋𝐢𝐥𝐨𝐮~✰❤️🖤👽</span></div>
+            <div class="quote animate-step">"Chère Clem, sache que notre rencontre a été la clé d’un petit jardin étoilé, ce jardin que je ne souhaiterais jamais quitter. Clem tu as été ma plus belle rencontre de l’année 2025. Je me souviendrai toujours de tous les bons moments passés ensemble, tous les fous rires. Une journée sans toi c’est comme une nuit sans étoiles. Tu te rappelles de notre soirée blind test ? C’était la meilleure soirée de ma vie, grâce à toi je me suis endormie avec le sourire. Clem sache que je t'aime du plus profond de mon cœur, tu es mon soleil! LOVE U MON CARAMEL ☀️ 💗⭐️💞"<span class="quote-author">– Raya☆</span></div>
+            <div class="quote animate-step"> "Cette année 2025,Clem a réussi à atteindre les 500 k de petites étoiles autour d’elle . Elle nous a fait découvrir des jeux, les fnl ou encore des événements ZEPETO comme les zelas ,…; ces lives redonnent le sourire à plein de personnes et grâce à sa joie et son humour ( au second degrés) elle nous a tous conquis . La commu des étoiles s’agrandit et nous permettent de rencontrer plein de personnes merveilleuse. Les souvenirs de cette année sont drôles , joyeux , aventure ( comme pour chasser Robert de l’île) et surtout positif. Tout ces souvenirs resteront gravés dans notre mémoire et se rajouteront aux nouveaux à venir "<span class="quote-author">– Ananas;🐈🩷🍍🍊☆</span></div>
+            <div class="quote animate-step"> "Clem je te félicite pour le travaille que ta fait pour les zela je suis très reconnaissante se réveiller tôt pour lives toute la journée c dure🎀Mais avec tout ton travaille est l'effort que ta fait tu a gagner au ZELA🌟 je suis très heureuse pour toi mon chou 🇲🇫🤍 Je te félicite🤍 Merci pour tout love you🥹"<span class="quote-author">– 🐇🍓｡ʚ𝚈𝚊𝚜𝚖𝚒𝚗𝚎ɞ🍀☆</span></div>
+          
+            <div class="message-box animate-step">
+                <p>Ces mots ne sont que quelques étoiles dans l'univers d'amour que tu as créée. Chaque personne touchée par ta lumière devient à son tour une source de chaleur et de joie.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="special-note animate-step">
+                <h3 style="color: #ff6b9d; margin-bottom: 15px; font-size: 1.5em;">✨ Pour 2026 et au-delà ✨</h3>
+                <p style="font-size: 1.2em;">J'attends avec impatience les nouvelles aventures qui nous attendent, les sommets que tu vas conquérir, et les milliers d'étoiles qui rejoindront encore ta constellation. Que l'année à venir soit encore plus magique, plus lumineuse, plus extraordinaire que celle-ci.</p>
+            </div>
+        </section>
+        
+        <footer class="footer animate-step">
+            <div class="final-message">À une nouvelle année d'étoiles partagées <span class="heart">❤️</span></div>
+            <p style="color: #8a7a9a; font-size: 1.2em; font-style: italic;">Avec tout mon amour, ta grenouille</p>
+            <p style="margin-top: 20px; color: #ff6b9d; font-size: 1.1em;">🌹🐸💖👓🐰⭐</p>
+        </footer>
+    </div>
+
+    <script>
+        function createFloatingStars() {
+            const starsContainer = document.getElementById('floating-stars');
+            const starCount = 30;
+            const starIcons = ['✧', '✦', '✩', '★', '⭐', '✨', '❀', '✿'];
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('floating-star');
+                star.textContent = starIcons[Math.floor(Math.random() * starIcons.length)];
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                
+                const colors = ['star-pink', 'star-orange', 'star-peach'];
+                star.classList.add(colors[Math.floor(Math.random() * colors.length)]);
+                
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        function setupStepAnimations() {
+            const elements = document.querySelectorAll('.animate-step');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            
+            function animateSteps() {
+                elements.forEach((el, index) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        setTimeout(() => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    }
+                });
+            }
+            
+            setTimeout(animateSteps, 500);
+            let isScrolling;
+            window.addEventListener('scroll', () => {
+                clearTimeout(isScrolling);
+                isScrolling = setTimeout(animateSteps, 100);
+            });
+        }
+        
+        function setupParallax() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const stars = document.querySelectorAll('.floating-star');
+                stars.forEach((star, index) => {
+                    const speed = 0.2 + (index * 0.02);
+                    const yPos = -(scrolled * speed);
+                    star.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingStars();
+            setupStepAnimations();
+            setupParallax();
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }, 100);
+            
+            setTimeout(() => {
+                document.querySelector('.header').style.opacity = '1';
+                document.querySelector('.header').style.transform = 'translateY(0)';
+            }, 300);
+        });
+        
+        document.addEventListener('click', function(e) {
+            const clickEffect = document.createElement('div');
+            clickEffect.style.position = 'fixed';
+            clickEffect.style.left = e.clientX + 'px';
+            clickEffect.style.top = e.clientY + 'px';
+            clickEffect.style.width = '50px';
+            clickEffect.style.height = '50px';
+            clickEffect.style.background = 'radial-gradient(circle, rgba(255,107,157,0.6) 0%, rgba(255,154,60,0.4) 100%)';
+            clickEffect.style.borderRadius = '50%';
+            clickEffect.style.pointerEvents = 'none';
+            clickEffect.style.zIndex = '9999';
+            clickEffect.style.animation = 'ripple 0.8s linear forwards';
+            
+            document.body.appendChild(clickEffect);
+            
+            setTimeout(() => {
+                clickEffect.remove();
+            }, 800);
+        });
+        
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                0% { transform: scale(0.1); opacity: 1; }
+                100% { transform: scale(2); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+    </script>
+</body>
+</html>
