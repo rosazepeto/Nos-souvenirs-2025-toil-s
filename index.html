@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pour mon lapin étoilé ✨</title>
-
-    <meta name="google-site-verification" content="GmodZe9nZwvs2C1PN3CNleqwc9qmBrz1LNesmxIEPTM" />
     
+    <meta name="google-site-verification" content="GmodZe9nZwvs2C1PN3CNleqwc9qmBrz1LNesmxIEPTM" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
     
@@ -413,6 +413,80 @@
             transform: translateY(0);
         }
         
+        /* Styles pour les liens magiques */
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .link-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 234, 0.8));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            box-shadow: 0 8px 20px rgba(255, 158, 192, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #6a5a7a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 158, 192, 0.4);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 240, 0.9));
+            border-color: #ff6b9d;
+        }
+        
+        .link-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .link-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b9d;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .link-description {
+            font-size: 0.9em;
+            color: #8a7a9a;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .link-url {
+            font-size: 0.8em;
+            color: #ff6b9d;
+            word-break: break-all;
+            background: rgba(255, 182, 193, 0.1);
+            padding: 8px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        .link-footer {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #ff9a3c;
+            font-weight: 600;
+        }
+        
         @media (max-width: 768px) {
             .container { padding: 25px; }
             .title { font-size: 2.5em; }
@@ -422,6 +496,7 @@
                 margin-left: 60px !important; 
             }
             .stars-grid { grid-template-columns: 1fr; }
+            .links-container { grid-template-columns: 1fr; }
             .quote { font-size: 1.2em; padding: 25px; }
             .congrats-title { font-size: 2em; }
             .video-container iframe { height: 300px; }
@@ -499,39 +574,91 @@
         </section>
         
         <section class="section">
-            <h2 class="section-title animate-step">🎉 Et pour finir... les ZELA 2025 🎉</h2>
+            <h2 class="section-title animate-step">🎉 Et pour finir... les ZELA mais aussi les ZOY 2025 🎉</h2>
             <div class="congrats-box animate-step">
                 <div class="congrats-title">🔥 FÉLICITATIONS CLEM !!! 🔥</div>
                 <div class="congrats-content">
                     <span class="trophy">🏆🏆</span>
-                    <p><strong>GG LES ZELA !!! DOUBLE TROPHÉE D'UN COUP, DANS LA REGIONALE ET DANS GAMING, C'EST ÉNORME !!!</strong></p>
+                    <p><strong> LES ZELA !!! DOUBLE TROPHÉE D'UN COUP, DANS LA REGIONALE ET DANS GAMING, C'EST ÉNORME !!!</strong></p>
                     <p>Toutes ces heures de live, ces moments où on a tout donné et pas abandonné, où on a tryhard ensemble... Tout ça a mené à <strong>ÇA</strong> ! Cette victoire, tu l'as méritée à 200%.</p>
                     <p>Je suis tellement, tellement fière de toi, c'est juste magnifique. Fêtons ça ensemble ma championne ! 🎉</p>
-                    <p>Bravo à toi ! Et bravo à Bob notre super star de nous avoir accompagnés toute l'année.</p>
+                    <p>Bravo à toi ! Et bravo à Bob notre super star de nous avoir accompagnés toute l'année.</p
+                    <p>En plus des ZELA, tu remportes aussi les <strong>ZOY Awards 2025</strong>.</p>
+                    <p>Tu es <strong>la seule Française</strong> à recevoir ce prix cette année, un accomplissement qui place ton talent à l'échelle du continent.</p>
+                    <p>Cette double victoire marque une année 2025 exceptionnelle et inoubliable !</p>
                 </div>
-            
-            <!-- VIDEO TIKTOK INSÉRÉE ICI -->
-            <div class="video-section animate-step">
-                <h3 class="section-title" style="font-size: 1.8em; margin-top: 40px;">🎥 On revoit cette victoire en vidéo !</h3>
-                <div class="video-container">
-                    <!-- Le lien TikTok que vous avez fourni -->
-                   </div>
-                <p class="video-note">✨ Une vidéo pour immortaliser ce double trophée ! ✨</p>
-                <p style="color: #ff6b9d; margin-top: 10px;"><em>Lien direct : <a href="https://vm.tiktok.com/ZNR2j8u5o/" target="_blank">https://vm.tiktok.com/ZNR2j8u5o/</a></em></p>
+    
+        <!-- NOUVELLE SECTION AJOUTÉE ICI -->
+        <section class="section">
+            <h2 class="section-title animate-step">🔗 Lien pour imortaliser des moment 2025 🔗</h2>
+            <div class="message-box animate-step">
+                <p>Voici des liens spéciaux qui ont marqué et vont imortalisé cette année étoilée, un souvenir précieux que nous avons partagé ensemble en 2025.</p>
+                <p>Clique sur chaque carte pour redécouvrir ces pépites !</p>
             </div>
 
-        </section>
+  <!-- ==================== SECTION ZELA ==================== -->
+<section class="section">
+    <h2 class="section-title">🏆 Les victoires des ZELA 2025 🏆</h2>
+    
+    <div class="links-container">
+        <div class="link-row">
+            <a href="https://pages.zepeto.me/fr/1li9h3Wk876V5AEABC6Rmta" target="_blank" class="link-card animate-step">
+                <span class="link-icon">📜</span>
+                <div class="link-title"> Livre des ZELA</div>
+                <div class="link-description"> Ici rassemble tout les gagnants des zela.</div>
+                <div class="link-url">pages.zepeto.me/fr/1li9h3Wk876V5AEABC6Rmta</div>
+                <div class="link-footer">📖 Feuillette l'histoire 📖</div>
+            </a>
+            
+            <a href="https://vm.tiktok.com/ZNR2j8u5o/" target="_blank" class="link-card animate-step">
+                <span class="link-icon">🎬</span>
+                <div class="link-title">Revoit cette victoire en direct</div>
+                <div class="link-description">Revive la double victoire en vidéo.</div>
+                <div class="link-url">vm.tiktok.com/ZNR2j8u5o/</div>
+                <div class="link-footer">🎥 Regarder 🎥</div>
+            </a>
+        </div>
+    </div>
+    
+<!-- ==================== SECTION ZOY ==================== -->
+<section class="section">
+    <h2 class="section-title">🎁 Les ZOY 🎁</h2>
 
+    <div class="links-container">
+        <div class="link-row">
+            <a href="https://pages.zepeto.me/fr/6RvRN3Wk88DV4yos7o6RrCI" target="_blank" class="link-card animate-step">
+                <span class="link-icon">🎨</span>
+                <div class="link-title">Les ZOY</div>
+                <div class="link-description"> Retrouve tous les gagnants des ZOY et leur compte</div>
+                <div class="link-url">pages.zepeto.me/fr/6RvRN3Wk88DV4yos7o6RrCI</div>
+                <div class="link-footer">🌈 Visionner 🌈</div>
+            </a>
+            
+            <a href="https://z3p.me/wXHtvJ3" target="_blank" class="link-card animate-step">
+                <span class="link-icon">⏳</span>
+                <div class="link-title">Post de France Tina </div>
+                <div class="link-description"> Un autre moment de voir cette victoire</div>
+                <div class="link-url">z3p.me/wXHtvJ3</div>
+                <div class="link-footer">💫 Saisis l'instant 💫</div>
+            </a>
+        </div>
+    </div>
+            
+            <div class="special-note animate-step">
+                <p style="font-size: 1.2em; color: #ff6b9d;">Ces liens sont comme des étoiles filantes : ils illuminent notre parcours et laissent une traînée de souvenirs brillants derrière eux ✨</p>
+            </div>
+        </section>
+        
         <section class="section">
             <h2 class="section-title animate-step">💌 Messages du Cœur 💌</h2>
             <div class="quote animate-step">"Je dirais que grâce à Clem j'ai appris à vite grandir en maturité mais je ne sais pas comment, malgré quelques neurones en moins je me dis d'avoir la chance de voir ces lives dès que je rentre du collège ou après une journée pourrie, donc merci Clem d'être le soleil de ma vie de me redonner le sourire quand je suis dans des périodes compliquées mentalement ou familialement, tu es l'étoile de mon cœur."<span class="quote-author">– ⭐☆La ponette☆🧚</span></div>
             <div class="quote animate-step">"HELLO MA CLEMOU j’espère que tu vas hyper bien, je voulais te remercier pour cette incroyable année 2025 c’est étonnant de se dire bientôt 2026 ! J’ai tellement de souvenirs que ça soit Noël, Halloween, la Saint Valentin... bref tu as toujours su nous remonter le moral. ♡JE T’AIME CLEM TU ES MON ETOILE☆La lumière des étoiles nous guidera ☆."<span class="quote-author">– ☆Sousou☆</span></div>
             <div class="quote animate-step">"J'ai tellement de chance d'être dans la famille des étoiles je n'aurais jamais pu espérer mieux et pour rien au monde je ne partirai. La première fois que j'ai regardé un de tes live c'était un live Fortnite, j'étais tombé sur toi par hasard et tu m'as fait tellement rire que je suis revenu le lendemain et le jour d'après et les jours d'encore après et depuis je viens tous les jours. Tes lives sont incroyables et énormément réconfortants. Sans toi je pense que plus de la moitié de la famille des étoiles ne serait pas aussi heureuse donc je te souhaite tout le bonheur du monde. J'espère que tu en feras encore des lives incroyables comme ça et que du love bisous clem clem🥰."<span class="quote-author">– ꧁☆🌺maissane🌺☆꧂</span></div>
-            <div class="quote animate-step">"Dès le début, j’ai été fascinée par ses lives. Ensuite j’ai appris à la connaître. Petit à petit je découvrais sa personnalité, son humour, et à chaque live, je m’attachais à elle encore un peu plus. Je suis rentrée dans son club après un peu plus d’un mois. J’étais tellement contente ! Pour moi je venais de devenir officiellement un membre de la famille des étoiles. Bref, je ne sais pas ce que je ferais sans elle. Je t’aime de tout mon coeur Clem, ne l’oublie pas 💗⭐️."<span class="quote-author">– °•☆ Kim ☆•°</span></div>
+            <div class="quote animate-step">"Dès le début, j'ai été fascinée par ses lives. Ensuite j'ai appris à la connaître. Petit à petit je découvrais sa personnalité, son humour, et à chaque live, je m'attachais à elle encore un peu plus. Je suis rentrée dans son club après un peu plus d'un mois. J'étais tellement contente ! Pour moi je venais de devenir officiellement un membre de la famille des étoiles. Bref, je ne sais pas ce que je ferais sans elle. Je t'aime de tout mon coeur Clem, ne l'oublie pas 💗⭐️."<span class="quote-author">– °•☆ Kim ☆•°</span></div>
             <div class="quote animate-step">"Merci pour cette année incroyable ✨️ tu m'as fait rire, sourire, pleurer (quand y'avait des bugs) et tu m'as fait rencontrer des personnes incroyables 💗 tu as eu beaucoup de diarrhée et t'as beaucoup crié sur Kendra 💩👸 Repose-toi bien pendant tes vacances 🩷 tu as rendu cette année magique 🧙‍♀️ et prends une douche avant le nouvel an pour pas nous intoxiquer au début 2026 🦧 t'es une winx, une sorcière et un singe 🌷 je t'aime de tout mon cœur vieille mamie 🌟💗💗"<span class="quote-author">– zoe☆</span></div>
             <div class="quote animate-step">"Clem je t'aime énormément, tu es une personne incroyable, merci beaucoup de m'avoir attrapé comme un Pokémon. Tu es l'étoile qui fait briller mon cœur toutes mes journées. Je t'aime mon chou à la crème 💗🫂"<span class="quote-author">– ☆°~𝐋𝐢𝐥𝐨𝐮~✰❤️🖤👽</span></div>
-            <div class="quote animate-step">"Chère Clem, sache que notre rencontre a été la clé d’un petit jardin étoilé, ce jardin que je ne souhaiterais jamais quitter. Clem tu as été ma plus belle rencontre de l’année 2025. Je me souviendrai toujours de tous les bons moments passés ensemble, tous les fous rires. Une journée sans toi c’est comme une nuit sans étoiles. Tu te rappelles de notre soirée blind test ? C’était la meilleure soirée de ma vie, grâce à toi je me suis endormie avec le sourire. Clem sache que je t'aime du plus profond de mon cœur, tu es mon soleil! LOVE U MON CARAMEL ☀️ 💗⭐️💞"<span class="quote-author">– Raya☆</span></div>
-            <div class="quote animate-step"> "Cette année 2025,Clem a réussi à atteindre les 500 k de petites étoiles autour d’elle . Elle nous a fait découvrir des jeux, les fnl ou encore des événements ZEPETO comme les zelas ,…; ces lives redonnent le sourire à plein de personnes et grâce à sa joie et son humour ( au second degrés) elle nous a tous conquis . La commu des étoiles s’agrandit et nous permettent de rencontrer plein de personnes merveilleuse. Les souvenirs de cette année sont drôles , joyeux , aventure ( comme pour chasser Robert de l’île) et surtout positif. Tout ces souvenirs resteront gravés dans notre mémoire et se rajouteront aux nouveaux à venir "<span class="quote-author">– Ananas;🐈🩷🍍🍊☆</span></div>
+            <div class="quote animate-step">"Chère Clem, sache que notre rencontre a été la clé d'un petit jardin étoilé, ce jardin que je ne souhaiterais jamais quitter. Clem tu as été ma plus belle rencontre de l'année 2025. Je me souviendrai toujours de tous les bons moments passés ensemble, tous les fous rires. Une journée sans toi c'est comme une nuit sans étoiles. Tu te rappelles de notre soirée blind test ? C'était la meilleure soirée de ma vie, grâce à toi je me suis endormie avec le sourire. Clem sache que je t'aime du plus profond de mon cœur, tu es mon soleil! LOVE U MON CARAMEL ☀️ 💗⭐️💞"<span class="quote-author">– Raya☆</span></div>
+            <div class="quote animate-step"> "Cette année 2025,Clem a réussi à atteindre les 500 k de petites étoiles autour d'elle . Elle nous a fait découvrir des jeux, les fnl ou encore des événements ZEPETO comme les zelas ,…; ces lives redonnent le sourire à plein de personnes et grâce à sa joie et son humour ( au second degrés) elle nous a tous conquis . La commu des étoiles s'agrandit et nous permettent de rencontrer plein de personnes merveilleuse. Les souvenirs de cette année sont drôles , joyeux , aventure ( comme pour chasser Robert de l'île) et surtout positif. Tout ces souvenirs resteront gravés dans notre mémoire et se rajouteront aux nouveaux à venir "<span class="quote-author">– Ananas;🐈🩷🍍🍊☆</span></div>
             <div class="quote animate-step"> "Clem je te félicite pour le travaille que ta fait pour les zela je suis très reconnaissante se réveiller tôt pour lives toute la journée c dure🎀Mais avec tout ton travaille est l'effort que ta fait tu a gagner au ZELA🌟 je suis très heureuse pour toi mon chou 🇲🇫🤍 Je te félicite🤍 Merci pour tout love you🥹"<span class="quote-author">– 🐇🍓｡ʚ𝚈𝚊𝚜𝚖𝚒𝚗𝚎ɞ🍀☆</span></div>
           
             <div class="message-box animate-step">
@@ -545,6 +672,30 @@
                 <p style="font-size: 1.2em;">J'attends avec impatience les nouvelles aventures qui nous attendent, les sommets que tu vas conquérir, et les milliers d'étoiles qui rejoindront encore ta constellation. Que l'année à venir soit encore plus magique, plus lumineuse, plus extraordinaire que celle-ci.</p>
             </div>
         </section>
+    <!-- ==================== SECTION PROFIL ==================== -->
+<section class="section">
+    <h2 class="section-title">✨ La Star de cette Aventure ✨</h2>
+    
+    <div class="message-box">
+        <p>Découvre le profil de la personne qui a vécu ces moments magiques. Chaque victoire et chaque cadeau raconte un peu de son histoire !</p>
+    </div>
+    
+    <div class="links-container">
+        <div class="link-row">
+            <a href="https://web.zepeto.me/share/user/profile/iamclem?referrer=r_roossaa" target="_blank" class="link-card animate-step">
+                <span class="link-icon">👤</span>
+                <div class="link-title">Profil de Clem</div>
+                <div class="link-description">Le compte officiel de la star derrière ces aventures. Découvre son univers, ses créations et son parcours exceptionnel.</div>
+                <div class="link-url">web.zepeto.me/share/user/profile/iamclem</div>
+                <div class="link-footer">🌟 Visiter le profil 🌟</div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="message-box">
+        <p>Chaque grande aventure a son héros. Derrière ces trophées et ces moments magiques se cache une personne au talent exceptionnel !</p>
+    </div>
+</section>
         
         <footer class="footer animate-step">
             <div class="final-message">À une nouvelle année d'étoiles partagées <span class="heart">❤️</span></div>
@@ -662,5 +813,4 @@
         document.head.appendChild(rippleStyle);
     </script>
 </body>
-
 </html>
